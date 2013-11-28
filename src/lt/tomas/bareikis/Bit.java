@@ -24,8 +24,14 @@ public class Bit {
         this.value = (value % modulus);
     }
 
-    public void setValue(Bit bit) {
-        this.value = (bit.getValue() % modulus);
+    public void setValue(Bit bit) throws IllegalArgumentException {
+
+        if (this.getModulus() == bit.getModulus()) {
+            this.value = (bit.getValue() % modulus);
+        } else {
+            throw new IllegalArgumentException("Modulus does not match ("
+                    + this.getModulus() + " and " + bit.getModulus() + " )");
+        }
     }
 
     public void add(int additionValue) {
@@ -38,6 +44,10 @@ public class Bit {
 
     public void nullify() {
         value = 0;
+    }
+
+    public int getModulus() {
+        return modulus;
     }
 
     @Override

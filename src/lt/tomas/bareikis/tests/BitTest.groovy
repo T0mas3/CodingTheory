@@ -80,4 +80,14 @@ class BitTest {
         assert bit1.getValue() == 0;
     }
 
+    @Test
+    void setBitIsWorking1() {
+        Bit bit1 = new Bit();
+        bit1.setValue(1)
+        Bit bit2 = new Bit();
+        bit2.setValue(bit1);
+
+        assert bit2.getValue() == 1;
+    }
+
 }
