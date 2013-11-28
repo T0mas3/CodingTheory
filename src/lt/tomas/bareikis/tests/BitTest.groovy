@@ -27,6 +27,30 @@ class BitTest {
     }
 
     @Test
+    void initialisationIsWorkingWithChar1() {
+        String str = "0";
+        Bit bit = new Bit(str.charAt(0));
+
+        assert bit.getValue() == 0;
+    }
+
+    @Test
+    void initialisationIsWorkingWithChar2() {
+        String str = "1";
+        Bit bit = new Bit(str.charAt(0));
+
+        assert bit.getValue() == 1;
+    }
+
+    @Test
+    void initialisationIsWorkingWithChar3() {
+        String str = "5";
+        Bit bit = new Bit(str.charAt(0));
+
+        assert bit.getValue() == 1;
+    }
+
+    @Test
     void additionIsWorking1() {
         Bit bit1 = new Bit();
         bit1.add(1);

@@ -19,6 +19,16 @@ public class Bit {
         this.value = value % modulus;
     }
 
+    public Bit(char charValue) throws IllegalArgumentException {
+
+        int intValue = Character.getNumericValue(charValue);
+        if (intValue == -1) {
+            throw new IllegalArgumentException("Cannot parse char");
+        }
+
+        this.value = intValue % modulus;
+    }
+
     public Bit() {}
 
     public int getValue() {
