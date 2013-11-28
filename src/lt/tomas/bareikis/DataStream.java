@@ -18,6 +18,10 @@ public class DataStream {
         return data.get(index);
     }
 
+    public int getSize() {
+        return data.size();
+    }
+
     public LinkedList<Bit> getDataAsBitList() {
         return this.data;
     }
