@@ -39,7 +39,13 @@ public class Bit {
     }
 
     public void add(Bit bit) {
-        value = (bit.getValue() + value) % modulus;
+        if (bit.getModulus() == this.getModulus()) {
+            value = (bit.getValue() + value) % modulus;
+        } else {
+            throw new IllegalArgumentException("Modulus does not match ("
+                    + this.getModulus() + " and " + bit.getModulus() + " )");
+        }
+
     }
 
     public void nullify() {
