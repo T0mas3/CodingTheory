@@ -44,5 +44,8 @@ public class Register {
         this.value.nullify();
     }
 
-
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
 }

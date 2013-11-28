@@ -5,6 +5,11 @@ public class Bit {
     int modulus = 2;
     int value = 0;
 
+    public Bit(Bit bit) {
+        this.modulus = bit.getModulus();
+        this.value = bit.getValue();
+    }
+
     public Bit(int modulus, int value) {
         this.modulus = modulus;
         this.value = value % modulus;
