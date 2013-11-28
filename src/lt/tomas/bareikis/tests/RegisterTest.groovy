@@ -10,21 +10,21 @@ class RegisterTest {
     void initialisationIsWorking1() {
         Register register = new Register();
 
-        assert register.getValue() == 0;
+        assert register.getValue().getValue() == 0;
     }
 
     @Test
     void initialisationIsWorking2() {
         Register register = new Register(new Bit(1));
 
-        assert register.getValue() == 1;
+        assert register.getValue().getValue() == 1;
     }
 
     @Test
     void initialisationIsWorking3() {
         Register register = new Register(new Bit(6));
 
-        assert register.getValue() == 0;
+        assert register.getValue().getValue() == 0;
     }
 
     @Test
@@ -32,7 +32,7 @@ class RegisterTest {
         Register register = new Register();
         register.addValue(new Bit(1));
 
-        assert register.getValue() == 1;
+        assert register.getValue().getValue() == 1;
     }
 
     @Test
@@ -41,7 +41,7 @@ class RegisterTest {
         register.setValue(new Bit(1))
         register.addValue(new Bit(1));
 
-        assert register.getValue() == 0;
+        assert register.getValue().getValue() == 0;
     }
 
     @Test
@@ -50,7 +50,7 @@ class RegisterTest {
         register.setValue(new Bit(1))
         register.addValue(1);
 
-        assert register.getValue() == 0;
+        assert register.getValue().getValue() == 0;
     }
 
     @Test
