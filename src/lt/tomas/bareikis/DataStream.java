@@ -45,4 +45,30 @@ public class DataStream {
     public String toString() {
         return data.toString();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj instanceof  DataStream) {
+            DataStream compareTo = (DataStream) obj;
+
+            if (compareTo.getSize() != this.getSize()) {
+                return false;
+            }
+
+            for (int i = 0; i < this.data.size(); i++) {
+                if (this.getDataAt(i).getValue() != compareTo.getDataAt(i).getValue()) {
+                    return false;
+                }
+
+                if (this.getDataAt(i).getModulus() != compareTo.getDataAt(i).getModulus()) {
+                    return false;
+                }
+            }
+
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
