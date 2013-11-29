@@ -70,16 +70,19 @@ public class Encoder {
     }
 
     public String getRegistersDump() {
+        return getRegistersValues().toString();
+    }
 
-        String registersDump = "";
+    public DataStream getRegistersValues() {
+        DataStream result = new DataStream();
 
-        registersDump += register1 +  " ";
-        registersDump += register2 +  " ";
-        registersDump += register3 +  " ";
-        registersDump += register4 +  " ";
-        registersDump += register5 +  " ";
-        registersDump += register6;
+        result.appendToStreamEnd(new Bit(register1.getValue()));
+        result.appendToStreamEnd(new Bit(register2.getValue()));
+        result.appendToStreamEnd(new Bit(register3.getValue()));
+        result.appendToStreamEnd(new Bit(register4.getValue()));
+        result.appendToStreamEnd(new Bit(register5.getValue()));
+        result.appendToStreamEnd(new Bit(register6.getValue()));
 
-        return registersDump;
+        return result;
     }
 }
