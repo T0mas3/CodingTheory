@@ -36,4 +36,44 @@ class EncoderTest {
         assert result.equals(new DataStream());
     }
 
+    @Test
+    void encodingSingleBitRegistersWorking1() {
+
+        Encoder encoder = new Encoder();
+
+        encoder.encode(new DataStream("1"));
+
+        assert encoder.getRegistersValues().equals(new DataStream("100000"));
+    }
+
+    @Test
+    void encodingSingleBitRegistersWorking2() {
+
+        Encoder encoder = new Encoder();
+
+        encoder.encode(new DataStream("0"));
+
+        assert encoder.getRegistersValues().equals(new DataStream("000000"));
+    }
+
+    @Test
+    void encodingRegistersWorking1() {
+
+        Encoder encoder = new Encoder();
+
+        encoder.encode(new DataStream("111"));
+
+        assert encoder.getRegistersValues().equals(new DataStream("111000"));
+    }
+
+    @Test
+    void encodingRegistersWorking2() {
+
+        Encoder encoder = new Encoder();
+
+        encoder.encode(new DataStream("111111"));
+
+        assert encoder.getRegistersValues().equals(new DataStream("111111"));
+    }
+
 }
