@@ -29,6 +29,15 @@ public class DataStream {
         return data.get(index);
     }
 
+    public DataStream getSubStream(int from, int to) {
+
+        DataStream subList = new DataStream();
+        for (int i = from; i < to; i++) {
+            subList.appendToStreamEnd(new Bit(this.data.get(i)));
+        }
+        return subList;
+    }
+
     public int getSize() {
         return data.size();
     }
