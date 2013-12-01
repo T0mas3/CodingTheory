@@ -15,6 +15,10 @@ public class RegisterGroup {
         return registers.get(index).getValue();
     }
 
+    public Bit getLastRegisterValue() {
+        return registers.getLast().getValue();
+    }
+
     public void setRegisterValueAt(int index, Bit newValue) {
         registers.get(index).setValue(new Bit(newValue));
     }
