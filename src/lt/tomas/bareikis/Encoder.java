@@ -2,21 +2,11 @@ package lt.tomas.bareikis;
 
 public class Encoder {
 
-    Register register1,
-             register2,
-             register3,
-             register4,
-             register5,
-             register6;
+    protected EncoderRegisterGroup encoderRegisterGroup;
 
 
     public Encoder() {
-        register1 = new Register();
-        register2 = new Register();
-        register3 = new Register();
-        register4 = new Register();
-        register5 = new Register();
-        register6 = new Register();
+        encoderRegisterGroup = new EncoderRegisterGroup();
     }
 
     public DataStream encodeForSending(DataStream dataStream) {
@@ -52,31 +42,16 @@ public class Encoder {
         Bit additionalBit = new Bit(inputBit);
 
         // Atliekam sudėties moduliu 2 operacijsa su atitinkamais registrais
-        additionalBit.add(register2.getValue());
-        additionalBit.add(register5.getValue());
-        additionalBit.add(register6.getValue());
+        additionalBit.add(encoderRegisterGroup.getRegisterValueAt(1));
+        additionalBit.add(encoderRegisterGroup.getRegisterValueAt(4));
+        additionalBit.add(encoderRegisterGroup.getRegisterValueAt(5));
 
         // Pridedam gautą bitą prie išėjusių bitų sekos
         output.appendToStreamEnd(additionalBit);
 
-        this.shiftRegisters(inputBit);
+        encoderRegisterGroup.shiftRegisters(inputBit);
 
         return output;
-    }
-
-    /**
-     *
-     * @param inputBit įėjęs į enkoderį bitas
-     */
-    private void shiftRegisters(Bit inputBit) {
-        // "Pastumame" registrų reikšmes. Kiekvienas registras gauna prieš jį esančio registro reikšmę
-        register6.setValue(register5.getValue());
-        register5.setValue(register4.getValue());
-        register4.setValue(register3.getValue());
-        register3.setValue(register2.getValue());
-        register2.setValue(register1.getValue());
-        // Pirmasis registras gauna įėjusio bito reikšmę
-        register1.setValue(inputBit);
     }
 
     public String getRegistersDump() {
@@ -84,15 +59,6 @@ public class Encoder {
     }
 
     public DataStream getRegistersValues() {
-        DataStream result = new DataStream();
-
-        result.appendToStreamEnd(new Bit(register1.getValue()));
-        result.appendToStreamEnd(new Bit(register2.getValue()));
-        result.appendToStreamEnd(new Bit(register3.getValue()));
-        result.appendToStreamEnd(new Bit(register4.getValue()));
-        result.appendToStreamEnd(new Bit(register5.getValue()));
-        result.appendToStreamEnd(new Bit(register6.getValue()));
-
-        return result;
+        return this.encoderRegisterGroup.getRegistersValuesAsDataStream();
     }
 }
