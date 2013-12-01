@@ -2,11 +2,11 @@ package lt.tomas.bareikis;
 
 public class Encoder {
 
-    protected EncoderRegisterGroup encoderRegisterGroup;
+    protected CommonRegisterGroup commonRegisterGroup;
 
 
     public Encoder() {
-        encoderRegisterGroup = new EncoderRegisterGroup();
+        commonRegisterGroup = new CommonRegisterGroup();
     }
 
     public DataStream encodeForSending(DataStream dataStream) {
@@ -42,14 +42,14 @@ public class Encoder {
         Bit additionalBit = new Bit(inputBit);
 
         // Atliekam sudėties moduliu 2 operacijsa su atitinkamais registrais
-        additionalBit.add(encoderRegisterGroup.getRegisterValueAt(1));
-        additionalBit.add(encoderRegisterGroup.getRegisterValueAt(4));
-        additionalBit.add(encoderRegisterGroup.getRegisterValueAt(5));
+        additionalBit.add(commonRegisterGroup.getRegisterValueAt(1));
+        additionalBit.add(commonRegisterGroup.getRegisterValueAt(4));
+        additionalBit.add(commonRegisterGroup.getRegisterValueAt(5));
 
         // Pridedam gautą bitą prie išėjusių bitų sekos
         output.appendToStreamEnd(additionalBit);
 
-        encoderRegisterGroup.shiftRegisters(inputBit);
+        commonRegisterGroup.shiftRegisters(inputBit);
 
         return output;
     }
@@ -59,6 +59,6 @@ public class Encoder {
     }
 
     public DataStream getRegistersValues() {
-        return this.encoderRegisterGroup.getRegistersValuesAsDataStream();
+        return this.commonRegisterGroup.getRegistersValuesAsDataStream();
     }
 }

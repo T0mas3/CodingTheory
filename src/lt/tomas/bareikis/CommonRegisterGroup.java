@@ -1,8 +1,8 @@
 package lt.tomas.bareikis;
 
-public class EncoderRegisterGroup extends RegisterGroup {
+public class CommonRegisterGroup extends RegisterGroup {
 
-    public EncoderRegisterGroup() {
+    public CommonRegisterGroup() {
         super();
 
         for (int i = 0; i < 6; i++) {
