@@ -6,7 +6,7 @@ public class Encoder {
              register2,
              register3,
              register4,
-             register5 ,
+             register5,
              register6;
 
 
@@ -17,6 +17,16 @@ public class Encoder {
         register4 = new Register();
         register5 = new Register();
         register6 = new Register();
+    }
+
+    public DataStream encodeForSending(DataStream dataStream) {
+
+        // Užkoduojame paduotus duomenis
+        DataStream encodedStream = this.encode(dataStream);
+        // Taip pat užkodauojame dar 6 papildomus nulinius bitus, kad supaprastintume dekodavimą.
+        encodedStream.appendToStreamEnd(this.encode(new DataStream("000000")));
+
+        return encodedStream;
     }
 
     public DataStream encode(DataStream dataStream) {

@@ -76,4 +76,18 @@ class EncoderTest {
         assert encoder.getRegistersValues().equals(new DataStream("111111"));
     }
 
+    @Test
+    void fullEncodingWorking1() {
+        Encoder encoder = new Encoder();
+        DataStream input = new DataStream("1");
+        assert encoder.encodeForSending(input).equals(new DataStream("11000100000101"));
+    }
+
+    @Test
+    void fullEncodingWorking2() {
+        Encoder encoder = new Encoder();
+        DataStream input = new DataStream("0");
+        assert encoder.encodeForSending(input).equals(new DataStream("00000000000000"));
+    }
+
 }
