@@ -50,6 +50,15 @@ public class DataStream {
         this.data.addAll(encodedPart.getDataAsBitList());
     }
 
+    public String toStringOfBytes() {
+        String result = "";
+        for (Bit bit: this.data) {
+            result += bit.getValue();
+        }
+
+        return result;
+    }
+
     @Override
     public String toString() {
         return data.toString();
