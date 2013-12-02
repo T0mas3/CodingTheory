@@ -13,13 +13,6 @@ public class Decoder {
         mde = new MDE();
     }
 
-    public DataStream decodeAfterSending(DataStream encodedDataStream) {
-
-        DataStream decodedStream = this.decode(encodedDataStream);
-
-        return decodedStream;
-    }
-
     public DataStream decode(DataStream encodedDataStream) {
 
         DataStream decodedStream = new DataStream();
