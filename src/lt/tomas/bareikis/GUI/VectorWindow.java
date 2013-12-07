@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 
 public class VectorWindow extends JFrame {
     private VectorInputJTextArea initialTextArea;
-    private VectorInputJTextArea transferedtextArea;
+    private VectorInputJTextArea transferedTextArea;
     private VectorInputJTextArea decodedTextArea;
     private VectorInputJTextArea encodedTextArea;
     private JPanel rootJPanel;
@@ -20,6 +20,7 @@ public class VectorWindow extends JFrame {
     private ProbabilityJTextField errorProbabilityTextField;
     private JButton sendChannelButton;
     private JLabel errorProbabilityLabel;
+    private JScrollPane scrollPane1;
 
     public VectorWindow() {
         super("Vektoriaus siuntimas");
@@ -52,11 +53,11 @@ public class VectorWindow extends JFrame {
 
                     float errorProbability = VectorWindow.this.errorProbabilityTextField.getErrorProbability();
 
-                    VectorWindow.this.transferedtextArea.setText(
+                    VectorWindow.this.transferedTextArea.setText(
                             Helper.transferVectorString(VectorWindow.this.encodedTextArea.getText(), errorProbability)
                     );
                 } else {
-                    VectorWindow.this.transferedtextArea.showValidationError();
+                    VectorWindow.this.transferedTextArea.showValidationError();
                 }
             }
         });
@@ -64,10 +65,10 @@ public class VectorWindow extends JFrame {
         decodeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (VectorWindow.this.transferedtextArea.isInputValid()) {
+                if (VectorWindow.this.transferedTextArea.isInputValid()) {
 
                     VectorWindow.this.decodedTextArea.setText(
-                            Helper.decodeVectorString(VectorWindow.this.transferedtextArea.getText())
+                            Helper.decodeVectorString(VectorWindow.this.transferedTextArea.getText())
                     );
                 } else {
                     VectorWindow.this.decodedTextArea.showValidationError();
