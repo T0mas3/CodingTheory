@@ -6,11 +6,11 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
 
-public class TextAreaUpdateListener implements DocumentListener {
+public class VectorTextAreaUpdateListener implements DocumentListener {
 
     JTextArea jTextArea;
 
-    public TextAreaUpdateListener(JTextArea jTextArea) {
+    public VectorTextAreaUpdateListener(JTextArea jTextArea) {
         jTextArea.getDocument().addDocumentListener(this);
         this.jTextArea = jTextArea;
     }

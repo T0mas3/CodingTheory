@@ -1,7 +1,6 @@
 package lt.tomas.bareikis.GUI;
 
 
-import com.sun.javaws.exceptions.InvalidArgumentException;
 import lt.tomas.bareikis.Channel;
 import lt.tomas.bareikis.DataStream;
 import lt.tomas.bareikis.Encoder;
@@ -9,7 +8,6 @@ import lt.tomas.bareikis.Encoder;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
-import java.util.InputMismatchException;
 
 public class Helper {
 
@@ -46,15 +44,15 @@ public class Helper {
      * @param input tekstas
      * @return ar įvestas tekstas atitinka tikimybės formatą
      */
-    public static boolean isProbabilityalid(String input) {
+    public static boolean isProbabilityValid(String input) {
         return input.matches("(0[.,][0-9]+|0|1[.,]0|1)");
     }
 
-    public static float readInputAsFloat(String inputString) throws ParseException, IllegalArgumentException {
+    public static float readInputAsProbabilityFloat(String inputString) throws ParseException, IllegalArgumentException {
         // Išmetame visus tarpus priekyje ir gale
         inputString = inputString.trim();
 
-        if (!Helper.isProbabilityalid(inputString)) {
+        if (!Helper.isProbabilityValid(inputString)) {
             throw new IllegalArgumentException("Blogas tikimybės formatas. Tikimybė turi būti intervale [0, 1]");
         }
 
