@@ -29,7 +29,7 @@ public class VectorWindow extends JFrame {
 
         this.setContentPane(rootJPanel);
         pack();
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         this.setVisible(true);
 
