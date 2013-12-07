@@ -91,9 +91,9 @@ public class Helper {
 
         for (int i = 0; i < input.length(); i++) {
             String singleCharBitString = Integer.toBinaryString((int)input.charAt(i));
-
             if (singleCharBitString.length() < requiredLength) {
-                for (int n = 0; n < requiredLength - singleCharBitString.length(); n++) {
+                int addZeroes = requiredLength - singleCharBitString.length();
+                for (int n = 0; n < addZeroes; n++) {
                     singleCharBitString = "0" + singleCharBitString;
                 }
             }
