@@ -48,6 +48,8 @@ public class VectorInputJTextArea extends JTextArea {
     }
 
     private void init() {
+        this.setLineWrap(true);
+        this.setWrapStyleWord(true);
         new VectorTextAreaUpdateListener(this);
     }
 
