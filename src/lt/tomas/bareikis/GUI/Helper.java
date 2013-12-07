@@ -12,6 +12,8 @@ import java.text.ParseException;
 
 public class Helper {
 
+    public static final int CHAR_BIT_LEN = 16;
+
     public static String encodeVectorString(String vector) {
         Encoder encoder = new Encoder();
         DataStream encodedStream = encoder.encodeForSending(new DataStream(vector));
@@ -87,7 +89,7 @@ public class Helper {
 
         String bitString = "";
 
-        int requiredLength = 8;
+        int requiredLength = CHAR_BIT_LEN;
 
         for (int i = 0; i < input.length(); i++) {
             String singleCharBitString = Integer.toBinaryString((int)input.charAt(i));
@@ -108,8 +110,8 @@ public class Helper {
 
         String charactersString = "";
 
-        for (int i = 0; i < input.length() / 8; i++) {
-            int characterInt = Integer.parseInt(input.substring(i*8, (i*8) + 8), 2);
+        for (int i = 0; i < input.length() / CHAR_BIT_LEN; i++) {
+            int characterInt = Integer.parseInt(input.substring(i*CHAR_BIT_LEN, (i*CHAR_BIT_LEN) + CHAR_BIT_LEN), 2);
             charactersString = charactersString + (char)characterInt;
         }
 
