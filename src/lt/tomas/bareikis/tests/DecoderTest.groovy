@@ -15,7 +15,7 @@ class DecoderTest {
 
         DataStream input = new DataStream("");
         DataStream encoded = encoder.encodeForSending(input);
-        DataStream decoded = decoder.decodeForReceiving(encoded);
+        DataStream decoded = decoder.decodeAfterReceiving(encoded);
 
         assert decoded.equals(input);
     }
@@ -28,7 +28,7 @@ class DecoderTest {
 
         DataStream input = new DataStream("111");
         DataStream encoded = encoder.encodeForSending(input);
-        DataStream decoded = decoder.decodeForReceiving(encoded);
+        DataStream decoded = decoder.decodeAfterReceiving(encoded);
 
         assert decoded.equals(input);
     }
@@ -41,7 +41,7 @@ class DecoderTest {
 
         DataStream input = new DataStream("1");
         DataStream encoded = encoder.encodeForSending(input);
-        DataStream decoded = decoder.decodeForReceiving(encoded);
+        DataStream decoded = decoder.decodeAfterReceiving(encoded);
 
         assert decoded.equals(input);
     }
@@ -54,7 +54,7 @@ class DecoderTest {
 
         DataStream input = new DataStream("0");
         DataStream encoded = encoder.encodeForSending(input);
-        DataStream decoded = decoder.decodeForReceiving(encoded);
+        DataStream decoded = decoder.decodeAfterReceiving(encoded);
 
         assert decoded.equals(input);
     }
@@ -67,7 +67,7 @@ class DecoderTest {
 
         DataStream input = new DataStream("10101010101");
         DataStream encoded = encoder.encodeForSending(input);
-        DataStream decoded = decoder.decodeForReceiving(encoded);
+        DataStream decoded = decoder.decodeAfterReceiving(encoded);
 
         assert decoded.equals(input);
     }
@@ -88,7 +88,7 @@ class DecoderTest {
 
         DataStream input = new DataStream(inputStr);
         DataStream encoded = encoder.encodeForSending(input);
-        DataStream decoded = decoder.decodeForReceiving(encoded);
+        DataStream decoded = decoder.decodeAfterReceiving(encoded);
 
         assert decoded.equals(input);
     }

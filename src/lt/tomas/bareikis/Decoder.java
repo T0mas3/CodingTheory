@@ -29,7 +29,7 @@ public class Decoder {
         return decodedStream;
     }
 
-    public DataStream decodeForReceiving(DataStream dataStream) {
+    public DataStream decodeAfterReceiving(DataStream dataStream) {
         DataStream decodedDataStream = this.decode(dataStream);
         return decodedDataStream.getSubStream(6, decodedDataStream.getSize());
     }
