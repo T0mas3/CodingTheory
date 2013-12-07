@@ -109,7 +109,7 @@ public class Helper {
         String charactersString = "";
 
         for (int i = 0; i < input.length() / 8; i++) {
-            int characterInt = Integer.parseInt(input.substring(i, i + 8), 2);
+            int characterInt = Integer.parseInt(input.substring(i*8, (i*8) + 8), 2);
             charactersString = charactersString + (char)characterInt;
         }
 
