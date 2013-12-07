@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 public class MainWindow {
     private JButton sendVectorButton;
     private JPanel rootJPanel;
+    private JButton sendStringButton;
 
     public MainWindow() {
         sendVectorButton.addMouseListener(new MouseAdapter() {
@@ -14,6 +15,14 @@ public class MainWindow {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 new VectorWindow();
+            }
+        });
+
+        sendStringButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                new StringWindow();
             }
         });
     }
