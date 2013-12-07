@@ -83,4 +83,37 @@ public class Helper {
         }
     }
 
+    public static String transformStringToBitString(String input) {
+
+        String bitString = "";
+
+        int requiredLength = 8;
+
+        for (int i = 0; i < input.length(); i++) {
+            String singleCharBitString = Integer.toBinaryString((int)input.charAt(i));
+
+            if (singleCharBitString.length() < requiredLength) {
+                for (int n = 0; n < requiredLength - singleCharBitString.length(); n++) {
+                    singleCharBitString = "0" + singleCharBitString;
+                }
+            }
+
+            bitString += singleCharBitString;
+        }
+
+        return bitString;
+    }
+
+    public static String transformoBitStringToCharactersString(String input) {
+
+        String charactersString = "";
+
+        for (int i = 0; i < input.length() / 8; i++) {
+            int characterInt = Integer.parseInt(input.substring(i, i + 8), 2);
+            charactersString = charactersString + (char)characterInt;
+        }
+
+        return charactersString;
+    }
+
 }
