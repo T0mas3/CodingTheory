@@ -31,7 +31,7 @@ public class TextAreaUpdateListener implements DocumentListener {
     }
 
     private void validateInput() {
-        if (Helper.isInputValid(jTextArea.getText())) {
+        if (Helper.isVectorInputValid(jTextArea.getText())) {
             jTextArea.setForeground(Color.black);
         } else {
             jTextArea.setForeground(Color.magenta);
