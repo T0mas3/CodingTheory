@@ -104,7 +104,7 @@ public class Helper {
         return bitString;
     }
 
-    public static String transformoBitStringToCharactersString(String input) {
+    public static String transformBitStringToCharactersString(String input) {
 
         String charactersString = "";
 

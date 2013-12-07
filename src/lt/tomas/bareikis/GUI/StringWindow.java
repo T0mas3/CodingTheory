@@ -53,7 +53,7 @@ public class StringWindow extends JFrame {
                 );
 
                 StringWindow.this.transferedStringTextArea.setText(
-                        Helper.transformoBitStringToCharactersString(
+                        Helper.transformBitStringToCharactersString(
                                 Helper.transferVectorString(StringWindow.this.initialTextArea.getValueAsBinaryString(), errorProbability)
                         )
                 );
@@ -66,7 +66,7 @@ public class StringWindow extends JFrame {
                 if (StringWindow.this.transferedVectorTextArea.isInputValid()) {
 
                     StringWindow.this.decodedTextArea.setText(
-                            Helper.transformoBitStringToCharactersString(
+                            Helper.transformBitStringToCharactersString(
                                     Helper.decodeVectorString(StringWindow.this.transferedVectorTextArea.getText())
                             )
                     );
