@@ -3,6 +3,7 @@ package lt.tomas.bareikis.GUI;
 
 import lt.tomas.bareikis.Channel;
 import lt.tomas.bareikis.DataStream;
+import lt.tomas.bareikis.Decoder;
 import lt.tomas.bareikis.Encoder;
 
 import java.text.DecimalFormat;
@@ -23,6 +24,14 @@ public class Helper {
         DataStream encodedStream = new DataStream(vector);
         DataStream transferredStream = channel.transfer(encodedStream);
         return transferredStream.toStringOfBytes();
+    }
+
+    public static String decodeVectorString(String vector) {
+        DataStream transferredStream = new DataStream(vector);
+        Decoder decoder = new Decoder();
+        DataStream decodedStream = decoder.decodeAfterReceiving(transferredStream);
+
+        return decodedStream.toStringOfBytes();
     }
 
     public static boolean isVectorInputValid(String input) {

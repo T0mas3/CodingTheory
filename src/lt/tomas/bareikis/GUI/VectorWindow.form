@@ -134,7 +134,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="7764d" class="lt.tomas.bareikis.GUI.customComponents.VectorInputJTextArea" binding="textArea3" default-binding="true">
+          <component id="7764d" class="lt.tomas.bareikis.GUI.customComponents.VectorInputJTextArea" binding="decodedTextArea">
             <constraints/>
             <properties>
               <lineWrap value="true"/>

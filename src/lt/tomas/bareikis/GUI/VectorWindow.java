@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 public class VectorWindow extends JFrame {
     private VectorInputJTextArea initialTextArea;
     private VectorInputJTextArea transferedtextArea;
-    private VectorInputJTextArea textArea3;
+    private VectorInputJTextArea decodedTextArea;
     private VectorInputJTextArea encodedTextArea;
     private JPanel rootJPanel;
     private JButton encodeButton;
@@ -60,7 +60,20 @@ public class VectorWindow extends JFrame {
                 }
             }
         });
-    }
 
+        decodeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (VectorWindow.this.transferedtextArea.isInputValid()) {
+
+                    VectorWindow.this.decodedTextArea.setText(
+                            Helper.decodeVectorString(VectorWindow.this.transferedtextArea.getText())
+                    );
+                } else {
+                    VectorWindow.this.decodedTextArea.showValidationError();
+                }
+            }
+        });
+    }
 
 }
