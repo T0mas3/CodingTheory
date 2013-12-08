@@ -44,7 +44,7 @@ public class DecoderRegisterGroup extends RegisterGroup {
 
         // Pirmojo bito reikšmė bus tokia pati kaip ir rezultato bito..
         Bit bitForRegister0 = new Bit(inputBit);
-        // atlikus XOR operaciją su iš kanalo atėjusiu bitu
+        // ...atlikus XOR operaciją su iš kanalo atėjusiu bitu
         bitForRegister0.add(resultBit);
         this.setRegisterValueAt(0, bitForRegister0);
     }
