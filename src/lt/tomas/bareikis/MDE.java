@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Majority Decision Element
  * Nustato, kurios iš paduotų reikšmių sekoje yra daugiausia.
  */
 public class MDE {
