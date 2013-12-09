@@ -25,8 +25,6 @@ import java.util.LinkedList;
 
 public class Helper {
 
-    public static final int CHAR_BIT_LEN = 16;
-
     public static String encodeVectorString(String vector) {
         Encoder encoder = new Encoder();
         DataStream encodedStream = encoder.encodeForSending(new DataStream(vector));
@@ -53,34 +51,13 @@ public class Helper {
         return input.matches("[0-1]*");
     }
 
-
-    public static String transformStringToBitString(String input) {
-
-        String bitString = "";
-
-        int requiredLength = CHAR_BIT_LEN;
-
-        for (int i = 0; i < input.length(); i++) {
-            String singleCharBitString = Integer.toBinaryString((int)input.charAt(i));
-            if (singleCharBitString.length() < requiredLength) {
-                int addZeroes = requiredLength - singleCharBitString.length();
-                for (int n = 0; n < addZeroes; n++) {
-                    singleCharBitString = "0" + singleCharBitString;
-                }
-            }
-
-            bitString += singleCharBitString;
-        }
-
-        return bitString;
-    }
-
     public static String transformBitStringToCharactersString(String input) {
 
         String charactersString = "";
+        int charBitLen = 16;
 
-        for (int i = 0; i < input.length() / CHAR_BIT_LEN; i++) {
-            int characterInt = Integer.parseInt(input.substring(i*CHAR_BIT_LEN, (i*CHAR_BIT_LEN) + CHAR_BIT_LEN), 2);
+        for (int i = 0; i < input.length() / charBitLen; i++) {
+            int characterInt = Integer.parseInt(input.substring(i*charBitLen, (i*charBitLen) + charBitLen), 2);
             charactersString = charactersString + (char)characterInt;
         }
 
