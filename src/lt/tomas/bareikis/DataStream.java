@@ -153,4 +153,18 @@ public class DataStream {
             return false;
         }
     }
+
+    public LinkedList<Integer> getMismatchPositions(DataStream dataStreamToCompare) {
+
+        LinkedList<Integer> mismatches = new LinkedList<Integer>();
+
+        for (int i = 0; i < this.data.size(); i++) {
+            // Ar reikšmė sutampa?
+            if (this.getDataAt(i).getValue() != dataStreamToCompare.getDataAt(i).getValue()) {
+                mismatches.add(i);
+            }
+        }
+
+        return mismatches;
+    }
 }
