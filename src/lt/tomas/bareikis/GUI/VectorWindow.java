@@ -1,14 +1,9 @@
 package lt.tomas.bareikis.GUI;
 
-import lt.tomas.bareikis.DataStream;
 import lt.tomas.bareikis.GUI.customComponents.ProbabilityJTextField;
 import lt.tomas.bareikis.GUI.customComponents.VectorInputJTextArea;
 
 import javax.swing.*;
-import javax.swing.event.ListSelectionEvent;
-import javax.swing.event.ListSelectionListener;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.DefaultHighlighter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,8 +22,10 @@ public class VectorWindow extends JFrame {
     private JButton sendChannelButton;
     private JLabel errorProbabilityLabel;
     private JScrollPane scrollPane1;
-    private JList errorsList;
-    private JLabel errorsCountLabel;
+    private JList sendingErrorsList;
+    private JLabel sendingErrorsCountLabel;
+    private JList decodingErrorsList;
+    private JLabel decodingErrorsCountLabel;
 
     private LinkedList<Integer> mismatchPositions;
 
@@ -85,7 +82,8 @@ public class VectorWindow extends JFrame {
                 }
             }
         });
-        new VectorTextAreaCompareListener(transferedTextArea, encodedTextArea, errorsList, errorsCountLabel);
+        new VectorTextAreaCompareListener(transferedTextArea, encodedTextArea, sendingErrorsList, sendingErrorsCountLabel);
+        new VectorTextAreaCompareListener(decodedTextArea, initialTextArea, decodingErrorsList, decodingErrorsCountLabel);
     }
 
 }
