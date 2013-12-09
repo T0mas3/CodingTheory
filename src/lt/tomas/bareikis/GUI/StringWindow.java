@@ -22,6 +22,12 @@ public class StringWindow extends JFrame {
     private JButton decodeButton;
     private StringInputJTextArea decodedTextArea;
     private StringInputJTextArea initialTextArea;
+    private JList sendingEncodedErrorsList;
+    private JLabel sendingEncodedErrorsCountLabel;
+    private JLabel sendingUncodedErrorsCountLabel;
+    private JLabel decodedErrorsCountLabel;
+    private JList sendingUncodedErrorsList;
+    private JList decodedErrorsList;
 
     public StringWindow() {
         super("Teksto siuntimas");
@@ -75,6 +81,11 @@ public class StringWindow extends JFrame {
                 }
             }
         });
+
+        new VectorTextAreaCompareListener(transferedVectorTextArea, encodedTextArea, sendingEncodedErrorsList, sendingEncodedErrorsCountLabel);
+        new VectorTextAreaCompareListener(transferedStringTextArea, initialTextArea, sendingUncodedErrorsList, sendingUncodedErrorsCountLabel);
+        new VectorTextAreaCompareListener(decodedTextArea, initialTextArea, decodedErrorsList, decodedErrorsCountLabel);
+
     }
 
 }
