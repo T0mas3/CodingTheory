@@ -201,17 +201,4 @@ public class Helper {
         return stringBuilder.toString();
     }
 
-
-    public static void clearMarkers(JTextArea jTextArea) {
-        Highlighter highlighter = jTextArea.getHighlighter();
-        Highlighter.Highlight[] highlights = highlighter.getHighlights();
-
-        for (int i = 0; i < highlights.length; i++) {
-            if (highlights[i].getPainter() instanceof DefaultHighlighter.DefaultHighlightPainter) {
-                highlighter.removeHighlight(highlights[i]);
-            }
-        }
-    }
-
-
 }
