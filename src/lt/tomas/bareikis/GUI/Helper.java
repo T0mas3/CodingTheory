@@ -47,10 +47,6 @@ public class Helper {
         return decodedStream.toStringOfBytes();
     }
 
-    public static boolean isVectorInputValid(String input) {
-        return input.matches("[0-1]*");
-    }
-
     public static String transformBitStringToCharactersString(String input) {
 
         String charactersString = "";

@@ -1,12 +1,14 @@
 package lt.tomas.bareikis.GUI.customComponents;
 
 
-import lt.tomas.bareikis.GUI.Helper;
 import lt.tomas.bareikis.GUI.VectorTextAreaUpdateListener;
 
 import javax.swing.*;
 import javax.swing.text.Document;
 
+/**
+ * Laukas vektoriaus įvedimui. Validuoja įvestus duomenis.
+ */
 public class VectorInputJTextArea extends JTextArea {
 
     public VectorInputJTextArea() {
@@ -40,7 +42,7 @@ public class VectorInputJTextArea extends JTextArea {
     }
 
     public boolean isInputValid() {
-        return Helper.isVectorInputValid(this.getText());
+        return this.isVectorInputValid(this.getText());
     }
 
     public void showValidationError() {
@@ -48,9 +50,21 @@ public class VectorInputJTextArea extends JTextArea {
     }
 
     private void init() {
+        // Keliame tekstą į naują eilutę, jei netelpa
         this.setLineWrap(true);
         this.setWrapStyleWord(true);
+        // Kas kartą pasikeitus teikstui, validuojame jį
         new VectorTextAreaUpdateListener(this);
+    }
+
+    /**
+     * Ar vektorius yra tinkamas (sudarytas tik iš 0 ir 1s)
+     *
+     * @param input tekstas
+     * @return ar validus
+     */
+    private boolean isVectorInputValid(String input) {
+        return input.matches("[0-1]*"); // Turi būti nulis ar daugiau 1 arba 0
     }
 
 }
