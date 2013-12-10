@@ -8,7 +8,6 @@ public class MainWindow {
     private JButton sendVectorButton;
     private JPanel rootJPanel;
     private JButton sendStringButton;
-    private JButton sendImageButton;
 
     public MainWindow() {
         sendVectorButton.addMouseListener(new MouseAdapter() {
@@ -24,14 +23,6 @@ public class MainWindow {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 new StringWindow();
-            }
-        });
-
-        sendImageButton.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                new ImageWindow();
             }
         });
     }
