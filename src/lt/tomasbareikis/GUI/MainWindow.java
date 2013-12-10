@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+/**
+ * Pradinis langas
+ */
 public class MainWindow {
     private JButton sendVectorButton;
     private JPanel rootJPanel;
@@ -28,7 +31,7 @@ public class MainWindow {
     }
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("MainWindow");
+        JFrame frame = new JFrame("Sąsūkos kodas. Dekodavimas su grįžtamuoju ryšiu (A14). Tomas Bareikis. PS-2");
         frame.setContentPane(new MainWindow().rootJPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
