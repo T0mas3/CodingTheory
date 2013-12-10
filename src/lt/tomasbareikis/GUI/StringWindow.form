@@ -15,7 +15,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="198ca" class="lt.tomasbareikis.GUI.customComponents.StringInputJTextArea" binding="initialTextArea">
+          <component id="198ca" class="lt.tomasbareikis.GUI.components.StringInputJTextArea" binding="initialTextArea">
             <constraints/>
             <properties/>
           </component>
@@ -57,7 +57,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="ae4a" class="lt.tomasbareikis.GUI.customComponents.VectorInputJTextArea" binding="encodedTextArea">
+          <component id="ae4a" class="lt.tomasbareikis.GUI.components.VectorInputJTextArea" binding="encodedTextArea">
             <constraints/>
             <properties>
               <lineWrap value="true"/>
@@ -82,7 +82,7 @@
           <text value="Klaidos tikimybė [0, 1]"/>
         </properties>
       </component>
-      <component id="d30d5" class="lt.tomasbareikis.GUI.customComponents.ProbabilityJTextField" binding="errorProbabilityTextField">
+      <component id="d30d5" class="lt.tomasbareikis.GUI.components.ProbabilityJTextField" binding="errorProbabilityTextField">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -107,7 +107,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="d78e7" class="lt.tomasbareikis.GUI.customComponents.VectorInputJTextArea" binding="transferedVectorTextArea">
+          <component id="d78e7" class="lt.tomasbareikis.GUI.components.VectorInputJTextArea" binding="transferedVectorTextArea">
             <constraints/>
             <properties>
               <lineWrap value="true"/>
@@ -131,7 +131,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="80ef2" class="lt.tomasbareikis.GUI.customComponents.StringInputJTextArea" binding="transferedStringTextArea">
+          <component id="80ef2" class="lt.tomasbareikis.GUI.components.StringInputJTextArea" binding="transferedStringTextArea">
             <constraints/>
             <properties>
               <lineWrap value="true"/>
@@ -163,7 +163,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="7376d" class="lt.tomasbareikis.GUI.customComponents.StringInputJTextArea" binding="decodedTextArea">
+          <component id="7376d" class="lt.tomasbareikis.GUI.components.StringInputJTextArea" binding="decodedTextArea">
             <constraints/>
             <properties>
               <lineWrap value="true"/>

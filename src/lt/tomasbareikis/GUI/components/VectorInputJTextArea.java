@@ -1,4 +1,4 @@
-package lt.tomasbareikis.GUI.customComponents;
+package lt.tomasbareikis.GUI.components;
 
 
 import lt.tomasbareikis.GUI.VectorTextAreaUpdateListener;

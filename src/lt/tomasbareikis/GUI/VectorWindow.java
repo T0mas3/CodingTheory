@@ -1,7 +1,7 @@
 package lt.tomasbareikis.GUI;
 
-import lt.tomasbareikis.GUI.customComponents.ProbabilityJTextField;
-import lt.tomasbareikis.GUI.customComponents.VectorInputJTextArea;
+import lt.tomasbareikis.GUI.components.ProbabilityJTextField;
+import lt.tomasbareikis.GUI.components.VectorInputJTextArea;
 
 import javax.swing.*;
 import java.awt.*;

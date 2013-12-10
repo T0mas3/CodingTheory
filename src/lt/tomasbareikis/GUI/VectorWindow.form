@@ -64,7 +64,7 @@
           <text value="Dekoduoti"/>
         </properties>
       </component>
-      <component id="edd1b" class="lt.tomasbareikis.GUI.customComponents.ProbabilityJTextField" binding="errorProbabilityTextField">
+      <component id="edd1b" class="lt.tomasbareikis.GUI.components.ProbabilityJTextField" binding="errorProbabilityTextField">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -91,7 +91,7 @@
         </properties>
         <border type="none"/>
         <children>
-          <component id="50f23" class="lt.tomasbareikis.GUI.customComponents.VectorInputJTextArea" binding="initialTextArea">
+          <component id="50f23" class="lt.tomasbareikis.GUI.components.VectorInputJTextArea" binding="initialTextArea">
             <constraints/>
             <properties/>
           </component>
@@ -104,7 +104,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="45364" class="lt.tomasbareikis.GUI.customComponents.VectorInputJTextArea" binding="encodedTextArea">
+          <component id="45364" class="lt.tomasbareikis.GUI.components.VectorInputJTextArea" binding="encodedTextArea">
             <constraints/>
             <properties>
               <lineWrap value="true"/>
@@ -120,7 +120,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="4ba2a" class="lt.tomasbareikis.GUI.customComponents.VectorInputJTextArea" binding="transferedTextArea">
+          <component id="4ba2a" class="lt.tomasbareikis.GUI.components.VectorInputJTextArea" binding="transferedTextArea">
             <constraints/>
             <properties>
               <lineWrap value="true"/>
@@ -136,7 +136,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="7764d" class="lt.tomasbareikis.GUI.customComponents.VectorInputJTextArea" binding="decodedTextArea">
+          <component id="7764d" class="lt.tomasbareikis.GUI.components.VectorInputJTextArea" binding="decodedTextArea">
             <constraints/>
             <properties>
               <lineWrap value="true"/>
