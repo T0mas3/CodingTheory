@@ -40,6 +40,7 @@ public class VectorWindow extends JFrame {
 
         this.setVisible(true);
 
+        // Užkodavimo mygtuko paspaudimas
         encodeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,6 +54,7 @@ public class VectorWindow extends JFrame {
             }
         });
 
+        // Siuntimo kanalu mygtuko paspaudimas
         sendChannelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,6 +71,7 @@ public class VectorWindow extends JFrame {
             }
         });
 
+        // Dekodavimo mygtuko paspaudimas
         decodeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,7 +85,10 @@ public class VectorWindow extends JFrame {
                 }
             }
         });
+
+        // Lyginame persiųstą kanalu vektorių su užkoduotu vektoriumi
         new VectorTextAreaCompareListener(transferedTextArea, encodedTextArea, sendingErrorsList, sendingErrorsCountLabel);
+        // Lyginame dekoduotą vektorių su originaliu įvestu vektoriumi
         new VectorTextAreaCompareListener(decodedTextArea, initialTextArea, decodingErrorsList, decodingErrorsCountLabel);
     }
 
